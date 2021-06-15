@@ -8,7 +8,11 @@ import classes from "./Navbar.module.css";
 const Navbar = () => {
   return (
     <div className={classes.navbar}>
-      <div className={classes.logo}>Mobile Bazaar</div>
+      <div className={classes.logo}>
+        <Link className={classes.link} to="/">
+          Mobile Bazaar
+        </Link>
+      </div>
       <div>
         <Link className={classes.link} to="/cart">
           <Badge color="error" badgeContent={0} showZero>
