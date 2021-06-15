@@ -17,15 +17,9 @@
   align-items: flex-start;
 }
 
-.name {
-  margin-bottom: 4px;
-}
-.price {
-  margin-bottom: 4px;
-}
-
 .img {
   width: 40px;
+  object-fit: contain;
 }
 
 .button {

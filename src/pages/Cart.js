@@ -1,6 +1,6 @@
 import React from "react";
-import CartItem from "../components/CartItem";
 import Button from "@material-ui/core/Button";
+import CartItem from "../components/CartItem";
 
 const Cart = () => {
   const cartItems = [
@@ -34,7 +34,7 @@ const Cart = () => {
     },
   ];
   return (
-    <div>
+    <div style={{ marginBottom: "40px" }}>
       <h1 style={{ textAlign: "center", margin: "40px 0", fontWeight: "400" }}>
         Your Cart
       </h1>
@@ -57,13 +57,19 @@ const Cart = () => {
           margin: "0 auto",
           display: "flex",
           justifyContent: "space-between",
+          padding: "20px",
         }}
       >
         <div>Total</div>
         <div>1000</div>
       </div>
-      <div style={{ textAlign: "center", margin: "10px 0" }}>
-        <Button>clear cart</Button>
+      <div
+        style={{
+          textAlign: "center",
+          margin: "10px 0",
+        }}
+      >
+        <Button>Clear Cart</Button>
       </div>
     </div>
   );

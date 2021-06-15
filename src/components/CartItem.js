@@ -1,13 +1,11 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 
 import classes from "./CartItem.module.css";
 
 const CartItem = ({ item }) => {
-  console.log(item);
   return (
     <div className={classes["container"]}>
       <div className={classes["item-container"]}>
@@ -18,9 +16,13 @@ const CartItem = ({ item }) => {
           <Button className={classes.button}>remove</Button>
         </div>
         <div className={classes.actions}>
-          <KeyboardArrowUpIcon />
+          <Button>
+            <KeyboardArrowUpIcon />
+          </Button>
           1
-          <KeyboardArrowDownIcon />
+          <Button>
+            <KeyboardArrowDownIcon />
+          </Button>
         </div>
       </div>
     </div>
