@@ -1,0 +1,41 @@
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.item-container {
+  display: flex;
+  gap: 30px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.name {
+  margin-bottom: 4px;
+}
+.price {
+  margin-bottom: 4px;
+}
+
+.img {
+  width: 40px;
+}
+
+.button {
+  padding: 0 !important;
+}
+
+.actions {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
