@@ -29,7 +29,11 @@ const CartItem = ({ item }) => {
           </Button>
         </div>
         <div className={classes.actions}>
-          <Button>
+          <Button
+            onClick={() => {
+              console.log("The Arrow up is clicked");
+            }}
+          >
             <KeyboardArrowUpIcon />
           </Button>
           1
