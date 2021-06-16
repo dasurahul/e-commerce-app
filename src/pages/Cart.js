@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
-import Button from "@material-ui/core/Button";
 import CartItem from "../components/CartItem";
+import Button from "@material-ui/core/Button";
 import CartContext from "../store/cart-context";
 
 const Cart = () => {
   const cartContext = useContext(CartContext);
   const cartItems = cartContext.cartItems;
+  const total = cartContext.cartItems.reduce((total, item) => {
+    return total + item.price;
+  }, 0);
   let content = cartItems.map((item) => {
     return <CartItem key={item.id} item={item} />;
   });
@@ -49,7 +52,7 @@ const Cart = () => {
           }}
         >
           <div style={{ fontWeight: "500" }}>Total</div>
-          <div style={{ fontWeight: "500" }}>{cartContext.total}</div>
+          <div style={{ fontWeight: "500" }}>{total}</div>
         </div>
       )}
       {cartItems.length > 0 && (

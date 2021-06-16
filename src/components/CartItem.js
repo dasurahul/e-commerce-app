@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import Button from "@material-ui/core/Button";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
@@ -7,7 +7,9 @@ import CartContext from "../store/cart-context";
 import classes from "./CartItem.module.css";
 
 const CartItem = ({ item }) => {
+  const [numberOfItems, setNumberOfItems] = useState(1);
   const cartContext = useContext(CartContext);
+
   return (
     <div className={classes["container"]}>
       <div className={classes["item-container"]}>
@@ -31,13 +33,23 @@ const CartItem = ({ item }) => {
         <div className={classes.actions}>
           <Button
             onClick={() => {
-              console.log("The Arrow up is clicked");
+              setNumberOfItems((number) => {
+                return number + 1;
+              });
             }}
           >
             <KeyboardArrowUpIcon />
           </Button>
-          1
-          <Button>
+          {numberOfItems}
+          <Button
+            onClick={() => {
+              if (numberOfItems !== 1) {
+                setNumberOfItems((number) => {
+                  return number - 1;
+                });
+              }
+            }}
+          >
             <KeyboardArrowDownIcon />
           </Button>
         </div>
