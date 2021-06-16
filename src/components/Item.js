@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import StarRateIcon from "@material-ui/icons/StarRate";
 import Button from "@material-ui/core/Button";
-
+import CartContext from "../store/cart-context";
 import classes from "./Item.module.css";
 
 const Item = ({ item }) => {
+  const cartContext = useContext(CartContext);
   return (
     <div className={classes["item-container"]}>
       <div>
@@ -19,7 +20,15 @@ const Item = ({ item }) => {
           </div>
         </div>
         <div className={classes.actions}>
-          <Button>Add To Cart</Button>
+          <Button
+            onClick={() => {
+              cartContext.setCartItems((items) => {
+                return [...items, item];
+              });
+            }}
+          >
+            Add To Cart
+          </Button>
           <Button>View Item</Button>
         </div>
       </div>

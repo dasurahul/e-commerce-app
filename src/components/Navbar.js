@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Badge from "@material-ui/core/Badge";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Link } from "react-router-dom";
+import CartContext from "../store/cart-context";
 
 import classes from "./Navbar.module.css";
 
 const Navbar = () => {
+  const cartContext = useContext(CartContext);
   return (
     <div className={classes.navbar}>
       <div className={classes.logo}>
@@ -15,7 +17,11 @@ const Navbar = () => {
       </div>
       <div>
         <Link className={classes.link} to="/cart">
-          <Badge color="error" badgeContent={0} showZero>
+          <Badge
+            color="error"
+            badgeContent={cartContext.cartItems.length}
+            showZero
+          >
             <ShoppingCartIcon />
           </Badge>
         </Link>

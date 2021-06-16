@@ -59,7 +59,13 @@ const Cart = () => {
             margin: "10px 0",
           }}
         >
-          <Button>Clear Cart</Button>
+          <Button
+            onClick={() => {
+              cartContext.setCartItems([]);
+            }}
+          >
+            Clear Cart
+          </Button>
         </div>
       )}
     </div>
