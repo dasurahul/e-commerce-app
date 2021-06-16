@@ -1,39 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import Button from "@material-ui/core/Button";
 import CartItem from "../components/CartItem";
+import CartContext from "../store/cart-context";
 
 const Cart = () => {
-  const cartItems = [
-    {
-      id: 1,
-      img: "https://m.media-amazon.com/images/I/71hEzQGO5qL._AC_UL480_FMwebp_QL65_.jpg",
-      name: "Redmi 9 Power",
-      price: 10499,
-      rating: 4,
-    },
-    {
-      id: 2,
-      img: "https://m.media-amazon.com/images/I/71OGzLCrjZS._AC_UL480_FMwebp_QL65_.jpg",
-      name: "Redmi Note 10",
-      price: 12499,
-      rating: 4,
-    },
-    {
-      id: 3,
-      img: "https://m.media-amazon.com/images/I/61IhTtJUXJL._AC_UL480_FMwebp_QL65_.jpg",
-      name: "Oppo A31",
-      price: 11490,
-      rating: 4,
-    },
-    {
-      id: 4,
-      img: "https://m.media-amazon.com/images/I/71BRHXBME2L._AC_UL480_FMwebp_QL65_.jpg",
-      name: "Vivo Y51A",
-      price: 17990,
-      rating: 4,
-    },
-  ];
-
+  const cartContext = useContext(CartContext);
+  const cartItems = cartContext.cartItems;
   let content = cartItems.map((item) => {
     return <CartItem key={item.id} item={item} />;
   });
