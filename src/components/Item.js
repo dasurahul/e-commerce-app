@@ -13,7 +13,7 @@ const Item = ({ item }) => {
       <div className={classes["details-container"]}>
         <div className={classes.details}>
           <div className={classes.name}>{item.name}</div>
-          <div>{item.price}</div>
+          <div>&#8377;{item.price}</div>
           <div className={classes.stars}>
             {item.rating} <StarRateIcon className={classes.star} />
           </div>
