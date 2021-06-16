@@ -49,7 +49,7 @@ const Cart = () => {
           }}
         >
           <div style={{ fontWeight: "500" }}>Total</div>
-          <div style={{ fontWeight: "500" }}>1000</div>
+          <div style={{ fontWeight: "500" }}>{cartContext.total}</div>
         </div>
       )}
       {cartItems.length > 0 && (
