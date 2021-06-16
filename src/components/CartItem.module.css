@@ -1,6 +1,6 @@
 .container {
   width: 90%;
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
   margin-bottom: 40px;
 }
@@ -20,6 +20,10 @@
 .img {
   width: 40px;
   object-fit: contain;
+}
+
+.name {
+  font-weight: 500;
 }
 
 .button {

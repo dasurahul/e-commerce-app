@@ -12,7 +12,7 @@ const CartItem = ({ item }) => {
         <img className={classes.img} src={item.img} alt={item.name} />
         <div className={classes.details}>
           <div className={classes.name}>{item.name}</div>
-          <div className={classes.price}>{item.price}</div>
+          <div>{item.price}</div>
           <Button className={classes.button}>remove</Button>
         </div>
         <div className={classes.actions}>

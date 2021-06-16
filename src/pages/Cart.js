@@ -33,44 +33,63 @@ const Cart = () => {
       rating: 4,
     },
   ];
+
+  let content = cartItems.map((item) => {
+    return <CartItem key={item.id} item={item} />;
+  });
+
+  if (cartItems.length === 0) {
+    content = (
+      <section style={{ textAlign: "center", margin: "100px 0" }}>
+        <p>No items in the cart</p>
+      </section>
+    );
+  }
+
   return (
-    <div style={{ marginBottom: "40px" }}>
-      <h1 style={{ textAlign: "center", margin: "40px 0", fontWeight: "400" }}>
+    <div style={{ margin: "40px 0" }}>
+      <h1
+        style={{ textAlign: "center", fontWeight: "400", marginBottom: "40px" }}
+      >
         Your Cart
       </h1>
-      {cartItems.map((item) => {
-        return <CartItem key={item.id} item={item} />;
-      })}
-      <hr
-        style={{
-          width: "90%",
-          maxWidth: "500px",
-          margin: "0 auto",
-          marginTop: "40px",
-          marginBottom: "20px",
-        }}
-      />
-      <div
-        style={{
-          width: "90%",
-          maxWidth: "500px",
-          margin: "0 auto",
-          display: "flex",
-          justifyContent: "space-between",
-          padding: "20px",
-        }}
-      >
-        <div>Total</div>
-        <div>1000</div>
-      </div>
-      <div
-        style={{
-          textAlign: "center",
-          margin: "10px 0",
-        }}
-      >
-        <Button>Clear Cart</Button>
-      </div>
+      {content}
+      {cartItems.length > 0 && (
+        <hr
+          style={{
+            width: "90%",
+            maxWidth: "600px",
+            margin: "0 auto",
+            marginTop: "40px",
+            marginBottom: "20px",
+          }}
+        />
+      )}
+      {cartItems.length > 0 && (
+        <div
+          style={{
+            width: "90%",
+            maxWidth: "600px",
+            margin: "0 auto",
+            display: "flex",
+            justifyContent: "space-between",
+            padding: "20px",
+          }}
+        >
+          <div style={{ fontWeight: "500" }}>Total</div>
+          <div style={{ fontWeight: "500" }}>1000</div>
+        </div>
+      )}
+      {cartItems.length > 0 && (
+        <div
+          style={{
+            textAlign: "center",
+            margin: "10px 0",
+          }}
+        >
+          <Button>Clear Cart</Button>
+        </div>
+      )}
     </div>
   );
 };
