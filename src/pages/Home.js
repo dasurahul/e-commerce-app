@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Loading from "../components/Loading";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import Item from "../components/Item";
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -34,7 +34,7 @@ const Home = () => {
   if (loading) {
     return (
       <section style={{ textAlign: "center", margin: "100px 0" }}>
-        <Loading />
+        <CircularProgress />
       </section>
     );
   }
