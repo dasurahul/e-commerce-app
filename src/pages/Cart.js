@@ -4,8 +4,12 @@ import Button from "@material-ui/core/Button";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
 import CartContext from "../store/cart-context";
+import AuthContext from "../store/auth-context";
+import { useHistory } from "react-router-dom";
 
 const Cart = () => {
+  const history = useHistory();
+  const authContext = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const [show, setShow] = useState(false);
   const handleClose = () => {
@@ -75,6 +79,7 @@ const Cart = () => {
             margin: "0 auto",
             marginTop: "40px",
             marginBottom: "20px",
+            backgroundColor: "#176ca5",
           }}
         />
       )}
@@ -89,8 +94,24 @@ const Cart = () => {
             padding: "20px",
           }}
         >
-          <div style={{ fontWeight: "500" }}>Total</div>
-          <div style={{ fontWeight: "500" }}>{total}</div>
+          <div>Total {total}</div>
+          <div style={{ textAlign: "center" }}>
+            <Button
+              variant="contained"
+              color="primary"
+              style={{ backgroundColor: "#176ca5" }}
+              onClick={() => {
+                if (authContext.isLoggedIn) {
+                  alert("Thank you for shopping with us");
+                  cartContext.setCartItems([]);
+                } else {
+                  history.push("/signin");
+                }
+              }}
+            >
+              Buy Now
+            </Button>
+          </div>
         </div>
       )}
       {cartItems.length > 0 && (
@@ -101,6 +122,7 @@ const Cart = () => {
           }}
         >
           <Button
+            variant="outlined"
             onClick={() => {
               cartContext.setCartItems([]);
               setOpen(true);

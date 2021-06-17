@@ -26,10 +26,6 @@
   font-weight: 500;
 }
 
-.button {
-  padding: 0 !important;
-}
-
 .actions {
   margin-left: auto;
   display: flex;

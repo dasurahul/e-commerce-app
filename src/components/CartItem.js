@@ -18,7 +18,7 @@ const CartItem = ({ item, onRemove, onIncrease, onDecrease }) => {
           <div className={classes.name}>{item.name}</div>
           <div>&#8377;{item.price}</div>
           <Button
-            className={classes.button}
+            style={{ padding: "0px" }}
             onClick={() => {
               cartContext.setCartItems((cartItems) => {
                 return cartItems.filter((cartItem) => {
@@ -28,7 +28,7 @@ const CartItem = ({ item, onRemove, onIncrease, onDecrease }) => {
               onRemove();
             }}
           >
-            remove
+            Remove
           </Button>
         </div>
         <div className={classes.actions}>
@@ -40,7 +40,7 @@ const CartItem = ({ item, onRemove, onIncrease, onDecrease }) => {
               onIncrease(item.price);
             }}
           >
-            <KeyboardArrowUpIcon />
+            <KeyboardArrowUpIcon style={{ color: "#176ca5" }} />
           </Button>
           {numberOfItems}
           <Button
@@ -53,7 +53,7 @@ const CartItem = ({ item, onRemove, onIncrease, onDecrease }) => {
               }
             }}
           >
-            <KeyboardArrowDownIcon />
+            <KeyboardArrowDownIcon style={{ color: "#176ca5" }} />
           </Button>
         </div>
       </div>

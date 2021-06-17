@@ -1,48 +1,46 @@
 import React, { useContext } from "react";
 import Badge from "@material-ui/core/Badge";
-import Button from "@material-ui/core/Button";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import { Link, useHistory } from "react-router-dom";
-import CartContext from "../store/cart-context";
+import Button from "@material-ui/core/Button";
 import AuthContext from "../store/auth-context";
+import CartContext from "../store/cart-context";
+import { Link, useHistory } from "react-router-dom";
 
 import classes from "./Navbar.module.css";
 
 const Navbar = () => {
-  const history = useHistory();
-  const cartContext = useContext(CartContext);
   const authContext = useContext(AuthContext);
+  const cartContext = useContext(CartContext);
+  const history = useHistory();
   return (
     <div className={classes.navbar}>
       <div className={classes.logo}>
-        <Link className={classes.link} to="/">
-          Mobile Bazaar
+        <Link to="/">
+          <h1>Mobile Bazaar</h1>
         </Link>
       </div>
-      {authContext.isLoggedIn && (
-        <Button
-          className={classes.right}
-          style={{ color: "white", fontSize: "16px" }}
-          onClick={() => {
-            authContext.logout();
-          }}
-        >
-          Log out
-        </Button>
-      )}
-      {!authContext.isLoggedIn && (
-        <Button
-          onClick={() => {
-            history.push("/signin");
-          }}
-          style={{ color: "white", fontSize: "16px" }}
-          className={classes.right}
-        >
-          Log In
-        </Button>
-      )}
-      <div>
-        <Link className={classes.link} to="/cart">
+      <div className={classes.user}>
+        {authContext.isLoggedIn && (
+          <Button
+            onClick={() => {
+              authContext.logout();
+            }}
+          >
+            Log Out
+          </Button>
+        )}
+        {!authContext.isLoggedIn && (
+          <Button
+            onClick={() => {
+              history.push("/signin");
+            }}
+          >
+            Log In
+          </Button>
+        )}
+      </div>
+      <div className={classes.cart}>
+        <Link to="/cart">
           <Badge
             color="error"
             badgeContent={cartContext.cartItems.length}

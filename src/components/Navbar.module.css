@@ -3,22 +3,23 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  background-color: #66f;
+}
+
+.logo a h1 {
   color: #fff;
-  background-color: #176ca5;
-}
-
-.logo {
   font-weight: 500;
-  font-size: 20px;
 }
 
-.link {
-  color: white;
-  text-decoration: none;
-}
-
-.right {
+.user {
   margin-left: auto;
   margin-right: 15px;
-  font-size: 16px;
+}
+
+.user button {
+  color: #fff;
+}
+
+.cart a {
+  color: white;
 }
