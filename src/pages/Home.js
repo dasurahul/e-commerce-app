@@ -47,8 +47,10 @@ const Home = () => {
         marginTop: "40px",
         marginBottom: "40px",
         display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
         flexWrap: "wrap",
-        gap: "25px",
+        gap: "40px",
       }}
     >
       {content}
