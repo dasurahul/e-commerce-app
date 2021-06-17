@@ -1,16 +1,20 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import CartItem from "../components/CartItem";
 import Button from "@material-ui/core/Button";
 import CartContext from "../store/cart-context";
 
 const Cart = () => {
+  const [number, setNumber] = useState(0);
   const cartContext = useContext(CartContext);
   const cartItems = cartContext.cartItems;
   const total = cartContext.cartItems.reduce((total, item) => {
     return total + item.price;
-  }, 0);
+  }, number);
+  const increaseHandler = (price) => {
+    setNumber((number) => number + price);
+  };
   let content = cartItems.map((item) => {
-    return <CartItem key={item.id} item={item} />;
+    return <CartItem key={item.id} item={item} onIncrease={increaseHandler} />;
   });
 
   if (cartItems.length === 0) {

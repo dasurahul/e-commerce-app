@@ -6,7 +6,7 @@ import CartContext from "../store/cart-context";
 
 import classes from "./CartItem.module.css";
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, onIncrease }) => {
   const [numberOfItems, setNumberOfItems] = useState(1);
   const cartContext = useContext(CartContext);
 
@@ -36,6 +36,7 @@ const CartItem = ({ item }) => {
               setNumberOfItems((number) => {
                 return number + 1;
               });
+              onIncrease(item.price);
             }}
           >
             <KeyboardArrowUpIcon />
