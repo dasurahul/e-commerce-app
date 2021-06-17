@@ -6,7 +6,7 @@ import CartContext from "../store/cart-context";
 
 import classes from "./CartItem.module.css";
 
-const CartItem = ({ item, onIncrease }) => {
+const CartItem = ({ item, onIncrease, onDecrease }) => {
   const [numberOfItems, setNumberOfItems] = useState(1);
   const cartContext = useContext(CartContext);
 
@@ -48,6 +48,7 @@ const CartItem = ({ item, onIncrease }) => {
                 setNumberOfItems((number) => {
                   return number - 1;
                 });
+                onDecrease(item.price);
               }
             }}
           >

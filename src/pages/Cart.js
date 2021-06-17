@@ -13,8 +13,18 @@ const Cart = () => {
   const increaseHandler = (price) => {
     setNumber((number) => number + price);
   };
+  const decreaseHandler = (price) => {
+    setNumber((number) => number - price);
+  };
   let content = cartItems.map((item) => {
-    return <CartItem key={item.id} item={item} onIncrease={increaseHandler} />;
+    return (
+      <CartItem
+        key={item.id}
+        item={item}
+        onIncrease={increaseHandler}
+        onDecrease={decreaseHandler}
+      />
+    );
   });
 
   if (cartItems.length === 0) {
