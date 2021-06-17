@@ -39,22 +39,30 @@ const Home = () => {
     );
   }
   return (
-    <div
-      style={{
-        width: "90%",
-        maxWidth: "800px",
-        margin: "0 auto",
-        marginTop: "40px",
-        marginBottom: "40px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexWrap: "wrap",
-        gap: "40px",
-      }}
-    >
-      {content}
-    </div>
+    <React.Fragment>
+      <h1 style={{ textAlign: "center", margin: "40px 0", fontWeight: "500" }}>
+        Latest Mobile Phones
+      </h1>
+      <div
+        style={{
+          width: "90%",
+          maxWidth: "800px",
+          margin: "0 auto",
+          marginTop: "40px",
+          marginBottom: "40px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexWrap: "wrap",
+          padding: "20px",
+          gap: "40px",
+          backgroundColor: "#fff",
+          borderRadius: "4px",
+        }}
+      >
+        {content}
+      </div>
+    </React.Fragment>
   );
 };
 
