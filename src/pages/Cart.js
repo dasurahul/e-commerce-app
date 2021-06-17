@@ -53,7 +53,7 @@ const Cart = () => {
     <div style={{ margin: "40px 0" }}>
       <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">
-          Items removed from cart
+          All Items removed from cart
         </Alert>
       </Snackbar>
       <Snackbar open={show} autoHideDuration={3000} onClose={handleShow}>

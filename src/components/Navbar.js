@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import Avatar from "@material-ui/core/Avatar";
 import Badge from "@material-ui/core/Badge";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Link } from "react-router-dom";
@@ -14,6 +15,9 @@ const Navbar = () => {
         <Link className={classes.link} to="/">
           Mobile Bazaar
         </Link>
+      </div>
+      <div className={classes.avatar}>
+        <Avatar></Avatar> Login
       </div>
       <div>
         <Link className={classes.link} to="/cart">
