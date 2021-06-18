@@ -20,15 +20,6 @@ const Image = (props) => {
         }}
         alt="brand"
       />
-      <h2
-        style={{
-          fontFamily: '"Bangers", "Poppins", sans-serif',
-          color: "#555",
-          position: "absolute",
-        }}
-      >
-        Mobile Bazaar
-      </h2>
     </Paper>
   );
 };
