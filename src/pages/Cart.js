@@ -100,17 +100,15 @@ const Cart = () => {
       </h1>
       {content}
       {cartItems.length > 0 && (
-        <div
+        <hr
           style={{
-            height: "1px",
             width: "90%",
             maxWidth: "600px",
             margin: "0 auto",
             marginTop: "40px",
             marginBottom: "20px",
-            backgroundColor: "#2874F0",
           }}
-        ></div>
+        />
       )}
       {cartItems.length > 0 && (
         <div
