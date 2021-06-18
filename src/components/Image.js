@@ -13,11 +13,21 @@ const Image = (props) => {
     >
       <img
         src={props.data.img}
-        style={{ display: "block", width: "100%", object: "contain" }}
+        style={{
+          display: "block",
+          width: "100%",
+          object: "contain",
+        }}
         alt="anything"
       />
       <h1
-        style={{ fontFamily: "Bangers", color: "#555", position: "absolute" }}
+        style={{
+          fontFamily: "Bangers",
+          color: "#555",
+          position: "absolute",
+          top: "10px",
+          right: "10px",
+        }}
       >
         Mobile Bazaar
       </h1>
