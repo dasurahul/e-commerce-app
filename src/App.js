@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
@@ -22,6 +22,9 @@ const App = () => {
       </Route>
       <Route path="/signin">
         <Signin />
+      </Route>
+      <Route path="*">
+        <Redirect to="/" />
       </Route>
     </div>
   );

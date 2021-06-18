@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import Button from "@material-ui/core/Button";
 import Item from "../components/Item";
 import Carousel from "react-material-ui-carousel";
 import Image from "../components/Image";
@@ -11,13 +14,17 @@ const Home = () => {
       img: "https://i02.appmifile.com/67_operator_in/17/06/2021/29849cce49889519ab8fadade49c022b.jpg",
     },
     {
-      img: "https://i02.appmifile.com/639_operator_in/17/06/2021/9d03aa1b28144e9e76fad0b5120b9ed7.jpg",
+      img: "https://i02.appmifile.com/553_operator_in/17/06/2021/b2fd9fc29e2dfece50cf1628fc0c9865.jpg",
     },
     {
       img: "https://i02.appmifile.com/598_operator_in/12/06/2021/75578b17da839e81f4f9d4ccb046651b.jpg",
     },
   ];
   const [loading, setLoading] = useState(true);
+  const [open, setOpen] = useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
   const [items, setItems] = useState([]);
   useEffect(() => {
     axios
@@ -54,6 +61,21 @@ const Home = () => {
   }
   return (
     <React.Fragment>
+      <div>
+        <Button style={{ display: "block" }} onClick={() => setOpen(true)}>
+          Mobiles
+        </Button>
+        <Menu
+          style={{ top: "0" }}
+          keepMounted
+          open={open}
+          onClose={handleClose}
+        >
+          <MenuItem>My account</MenuItem>
+          <MenuItem>Logout</MenuItem>
+          <MenuItem>Profile</MenuItem>
+        </Menu>
+      </div>
       <Carousel>
         {data.map((item, i) => (
           <Image key={i} data={item} />
