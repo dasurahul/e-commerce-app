@@ -9,10 +9,10 @@ import Paper from "@material-ui/core/Paper";
 const Home = () => {
   var data = [
     {
-      name: "Mobile Bazaar",
+      img: "https://images.samsung.com/is/image/samsung/assets/in/Fold2_IN_1440x640-MAIN.jpg?$ORIGIN_JPG$",
     },
     {
-      name: "50% OFF",
+      img: "https://images.samsung.com/is/image/samsung/assets/in/home/in-613/Main-KV-1440x640.jpg?$ORIGIN_JPG$",
     },
   ];
   const [loading, setLoading] = useState(true);

@@ -5,14 +5,20 @@ const Image = (props) => {
   return (
     <Paper
       style={{
-        minHeight: "40vh",
+        maxHeight: "60vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
       }}
     >
-      <h1 style={{ fontFamily: "Bangers", color: "#2874F0" }}>
-        {props.data.name}
+      <img
+        src={props.data.img}
+        style={{ display: "block", width: "100%", object: "contain" }}
+      />
+      <h1
+        style={{ fontFamily: "Bangers", color: "#555", position: "absolute" }}
+      >
+        Mobile Bazaar
       </h1>
     </Paper>
   );
