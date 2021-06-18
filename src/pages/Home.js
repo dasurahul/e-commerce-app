@@ -67,13 +67,27 @@ const Home = () => {
   }
   return (
     <React.Fragment>
-      <div>
+      <div style={{ display: "flex" }}>
         <Button
           aria-controls="fade-menu"
           aria-haspopup="true"
           onClick={handleClick}
         >
           Mobiles
+        </Button>
+        <Button
+          aria-controls="fade-menu"
+          aria-haspopup="true"
+          onClick={handleClick}
+        >
+          Electronics
+        </Button>
+        <Button
+          aria-controls="fade-menu"
+          aria-haspopup="true"
+          onClick={handleClick}
+        >
+          Appliances
         </Button>
         <Menu
           id="fade-menu"
