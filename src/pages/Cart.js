@@ -3,29 +3,31 @@ import CartItem from "../components/CartItem";
 import Button from "@material-ui/core/Button";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
-import CartContext from "../store/cart-context";
 import AuthContext from "../store/auth-context";
+import CartContext from "../store/cart-context";
 import { useHistory } from "react-router-dom";
+import Dialog from "@material-ui/core/Dialog";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogActions from "@material-ui/core/DialogActions";
 
 const Cart = () => {
   const history = useHistory();
   const authContext = useContext(AuthContext);
+  const cartContext = useContext(CartContext);
   const [open, setOpen] = useState(false);
   const [show, setShow] = useState(false);
+  const [number, setNumber] = useState(0);
+  const [openDialog, setOpenDialog] = useState(false);
   const handleClose = () => {
     setOpen(false);
   };
-  const [number, setNumber] = useState(0);
-  const cartContext = useContext(CartContext);
-  const cartItems = cartContext.cartItems;
-  const total = cartContext.cartItems.reduce((total, item) => {
-    return total + item.price;
-  }, number);
-  const removeHandler = () => {
-    setShow(true);
-  };
   const handleShow = () => {
     setShow(false);
+  };
+  const removeHandler = () => {
+    setShow(true);
   };
   const increaseHandler = (price) => {
     setNumber((number) => number + price);
@@ -33,6 +35,13 @@ const Cart = () => {
   const decreaseHandler = (price) => {
     setNumber((number) => number - price);
   };
+  const closeDialog = () => {
+    setOpenDialog(false);
+  };
+  const cartItems = cartContext.cartItems;
+  const total = cartContext.cartItems.reduce((total, item) => {
+    return total + item.price;
+  }, number);
   let content = cartItems.map((item) => {
     return (
       <CartItem
@@ -47,14 +56,33 @@ const Cart = () => {
 
   if (cartItems.length === 0) {
     content = (
-      <section style={{ textAlign: "center", margin: "100px 0" }}>
+      <section style={{ textAlign: "center", margin: "40px 0" }}>
         <p>No items in the cart</p>
       </section>
     );
   }
 
   return (
-    <div style={{ margin: "40px 0" }}>
+    <div style={{ padding: "40px 0" }}>
+      <Dialog open={openDialog} onClose={closeDialog}>
+        <DialogTitle>Thank You</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Thank You for shopping with us. Have a good day.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            style={{ color: "#2874F0" }}
+            onClick={() => {
+              closeDialog();
+              history.push("/");
+            }}
+          >
+            OK
+          </Button>
+        </DialogActions>
+      </Dialog>
       <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">
           All Items removed from cart
@@ -79,7 +107,7 @@ const Cart = () => {
             margin: "0 auto",
             marginTop: "40px",
             marginBottom: "20px",
-            backgroundColor: "#176ca5",
+            backgroundColor: "#2874F0",
           }}
         />
       )}
@@ -91,18 +119,18 @@ const Cart = () => {
             margin: "0 auto",
             display: "flex",
             justifyContent: "space-between",
+            alignItems: "center",
             padding: "20px",
           }}
         >
-          <div>Total {total}</div>
+          <div style={{ fontWeight: "500" }}>Total &#8377;{total}</div>
           <div style={{ textAlign: "center" }}>
             <Button
               variant="contained"
-              color="primary"
-              style={{ backgroundColor: "#176ca5" }}
+              style={{ color: "#fff", backgroundColor: "#2874F0" }}
               onClick={() => {
                 if (authContext.isLoggedIn) {
-                  alert("Thank you for shopping with us");
+                  setOpenDialog(true);
                   cartContext.setCartItems([]);
                 } else {
                   history.push("/signin");
@@ -122,7 +150,8 @@ const Cart = () => {
           }}
         >
           <Button
-            variant="outlined"
+            color="secondary"
+            variant="contained"
             onClick={() => {
               cartContext.setCartItems([]);
               setOpen(true);

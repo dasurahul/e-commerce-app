@@ -19,6 +19,7 @@ const CartItem = ({ item, onRemove, onIncrease, onDecrease }) => {
           <div>&#8377;{item.price}</div>
           <Button
             style={{ padding: "0px" }}
+            color="secondary"
             onClick={() => {
               cartContext.setCartItems((cartItems) => {
                 return cartItems.filter((cartItem) => {
@@ -40,7 +41,7 @@ const CartItem = ({ item, onRemove, onIncrease, onDecrease }) => {
               onIncrease(item.price);
             }}
           >
-            <KeyboardArrowUpIcon style={{ color: "#176ca5" }} />
+            <KeyboardArrowUpIcon style={{ color: "#2874F0" }} />
           </Button>
           {numberOfItems}
           <Button
@@ -53,7 +54,7 @@ const CartItem = ({ item, onRemove, onIncrease, onDecrease }) => {
               }
             }}
           >
-            <KeyboardArrowDownIcon style={{ color: "#176ca5" }} />
+            <KeyboardArrowDownIcon style={{ color: "#2874F0" }} />
           </Button>
         </div>
       </div>
