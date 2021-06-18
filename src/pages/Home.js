@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import Menu from "@material-ui/core/Menu";
+import MenuList from "@material-ui/core/MenuList";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import Item from "../components/Item";
@@ -62,21 +62,20 @@ const Home = () => {
   return (
     <React.Fragment>
       <div>
-        <Button style={{ display: "block" }} onClick={() => setOpen(true)}>
+        {/* <Button
+          aria-controls="simple-menu"
+          style={{ display: "block" }}
+          onClick={() => setOpen(true)}
+        >
           Mobiles
         </Button>
-        <Menu
-          style={{ top: "0" }}
-          keepMounted
-          open={open}
-          onClose={handleClose}
-        >
+        <MenuList>
+          <MenuItem>Profile</MenuItem>
           <MenuItem>My account</MenuItem>
           <MenuItem>Logout</MenuItem>
-          <MenuItem>Profile</MenuItem>
-        </Menu>
+        </MenuList> */}
       </div>
-      <Carousel>
+      <Carousel animation="slide">
         {data.map((item, i) => (
           <Image key={i} data={item} />
         ))}
