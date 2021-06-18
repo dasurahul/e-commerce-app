@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import MenuList from "@material-ui/core/MenuList";
+import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import Item from "../components/Item";
 import Carousel from "react-material-ui-carousel";
 import Image from "../components/Image";
+import Fade from "@material-ui/core/Fade";
 
 const Home = () => {
   var data = [
@@ -21,11 +22,16 @@ const Home = () => {
     },
   ];
   const [loading, setLoading] = useState(true);
-  const [open, setOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
   const handleClose = () => {
-    setOpen(false);
+    setAnchorEl(false);
   };
   const [items, setItems] = useState([]);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
   useEffect(() => {
     axios
       .get(
@@ -62,18 +68,24 @@ const Home = () => {
   return (
     <React.Fragment>
       <div>
-        {/* <Button
-          aria-controls="simple-menu"
-          style={{ display: "block" }}
-          onClick={() => setOpen(true)}
+        <Button
+          aria-controls="fade-menu"
+          aria-haspopup="true"
+          onClick={handleClick}
         >
           Mobiles
         </Button>
-        <MenuList>
-          <MenuItem>Profile</MenuItem>
-          <MenuItem>My account</MenuItem>
-          <MenuItem>Logout</MenuItem>
-        </MenuList> */}
+        <Menu
+          id="fade-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={open}
+          onClose={handleClose}
+          TransitionComponent={Fade}
+        >
+          <MenuItem>Latest</MenuItem>
+          <MenuItem>Popular</MenuItem>
+        </Menu>
       </div>
       <Carousel animation="slide">
         {data.map((item, i) => (
