@@ -2,7 +2,19 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Item from "../components/Item";
+import Carousel from "react-material-ui-carousel";
+import Image from "../components/Image";
+import Paper from "@material-ui/core/Paper";
+
 const Home = () => {
+  var data = [
+    {
+      name: "Mobile Bazaar",
+    },
+    {
+      name: "50% OFF",
+    },
+  ];
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([]);
   useEffect(() => {
@@ -40,6 +52,11 @@ const Home = () => {
   }
   return (
     <React.Fragment>
+      <Carousel>
+        {data.map((item, i) => (
+          <Image key={i} data={item} />
+        ))}
+      </Carousel>
       <h1 style={{ textAlign: "center", margin: "40px 0", fontWeight: "500" }}>
         Latest Mobile Phones
       </h1>
