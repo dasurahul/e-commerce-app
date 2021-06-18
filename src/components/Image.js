@@ -14,6 +14,7 @@ const Image = (props) => {
       <img
         src={props.data.img}
         style={{ display: "block", width: "100%", object: "contain" }}
+        alt="anything"
       />
       <h1
         style={{ fontFamily: "Bangers", color: "#555", position: "absolute" }}

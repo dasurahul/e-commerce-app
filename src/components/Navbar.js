@@ -35,7 +35,7 @@ const Navbar = () => {
             Cancel
           </Button>
           <Button
-            color="secondary"
+            style={{ color: "#2874F0" }}
             onClick={() => {
               authContext.logout();
               handleClose();
@@ -73,7 +73,7 @@ const Navbar = () => {
       <div className={classes.cart}>
         <Link to="/cart">
           <Badge
-            color="error"
+            color="primary"
             badgeContent={cartContext.cartItems.length}
             showZero
           >

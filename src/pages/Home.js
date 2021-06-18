@@ -4,7 +4,6 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import Item from "../components/Item";
 import Carousel from "react-material-ui-carousel";
 import Image from "../components/Image";
-import Paper from "@material-ui/core/Paper";
 
 const Home = () => {
   var data = [
