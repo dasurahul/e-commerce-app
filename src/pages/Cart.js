@@ -56,7 +56,7 @@ const Cart = () => {
 
   if (cartItems.length === 0) {
     content = (
-      <section style={{ textAlign: "center", margin: "40px 0" }}>
+      <section style={{ textAlign: "center", padding: "40px 0" }}>
         <p>No items in the cart</p>
       </section>
     );
@@ -100,8 +100,9 @@ const Cart = () => {
       </h1>
       {content}
       {cartItems.length > 0 && (
-        <hr
+        <div
           style={{
+            height: "1px",
             width: "90%",
             maxWidth: "600px",
             margin: "0 auto",
@@ -109,7 +110,7 @@ const Cart = () => {
             marginBottom: "20px",
             backgroundColor: "#2874F0",
           }}
-        />
+        ></div>
       )}
       {cartItems.length > 0 && (
         <div
@@ -130,8 +131,8 @@ const Cart = () => {
               style={{ color: "#fff", backgroundColor: "#2874F0" }}
               onClick={() => {
                 if (authContext.isLoggedIn) {
-                  setOpenDialog(true);
                   cartContext.setCartItems([]);
+                  setOpenDialog(true);
                 } else {
                   history.push("/signin");
                 }
@@ -151,7 +152,7 @@ const Cart = () => {
         >
           <Button
             color="secondary"
-            variant="contained"
+            variant="outlined"
             onClick={() => {
               cartContext.setCartItems([]);
               setOpen(true);
