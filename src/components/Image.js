@@ -15,7 +15,6 @@ const Image = (props) => {
         src={props.data.img}
         style={{
           display: "block",
-          minHeight: "30vh",
           width: "100%",
         }}
         alt="brand"

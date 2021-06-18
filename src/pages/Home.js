@@ -8,13 +8,13 @@ import Image from "../components/Image";
 const Home = () => {
   var data = [
     {
+      img: "https://i02.appmifile.com/67_operator_in/17/06/2021/29849cce49889519ab8fadade49c022b.jpg",
+    },
+    {
+      img: "https://i02.appmifile.com/639_operator_in/17/06/2021/9d03aa1b28144e9e76fad0b5120b9ed7.jpg",
+    },
+    {
       img: "https://i02.appmifile.com/598_operator_in/12/06/2021/75578b17da839e81f4f9d4ccb046651b.jpg",
-    },
-    {
-      img: "https://images.samsung.com/is/image/samsung/assets/in/Fold2_IN_1440x640-MAIN.jpg?$ORIGIN_JPG$",
-    },
-    {
-      img: "https://in-exstatic-vivofs.vivo.com/gdHFRinHEMrj3yPG/1623924292319/05b576892e35f28a038b5daf678bd8dc.jpg",
     },
   ];
   const [loading, setLoading] = useState(true);
