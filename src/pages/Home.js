@@ -117,7 +117,7 @@ const Home = () => {
       </h1>
       <Container
         style={{
-          width: "90%",
+          width: "100%",
           margin: "0 auto",
           display: "flex",
           padding: "20px",
