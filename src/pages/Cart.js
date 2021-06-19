@@ -94,7 +94,7 @@ const Cart = () => {
         </Alert>
       </Snackbar>
       <h1
-        style={{ textAlign: "center", fontWeight: "400", marginBottom: "40px" }}
+        style={{ textAlign: "center", fontWeight: "500", marginBottom: "40px" }}
       >
         Your Cart
       </h1>

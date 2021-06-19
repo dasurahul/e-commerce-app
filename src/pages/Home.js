@@ -7,7 +7,6 @@ import Button from "@material-ui/core/Button";
 import Item from "../components/Item";
 import Carousel from "react-material-ui-carousel";
 import Image from "../components/Image";
-import Container from "@material-ui/core/Container";
 
 import Fade from "@material-ui/core/Fade";
 
@@ -112,14 +111,19 @@ const Home = () => {
           <Image key={i} data={item} />
         ))}
       </Carousel>
-      <h1 style={{ textAlign: "center", margin: "40px 0", fontWeight: "500" }}>
+      <h1
+        style={{
+          textAlign: "center",
+          marginTop: "10px",
+          marginBottom: "20px",
+          fontWeight: "500",
+        }}
+      >
         Latest Mobile Phones
       </h1>
-      <Container
+      <div
         style={{
           width: "100%",
-          margin: "0 auto",
-          padding: "20px",
           display: "flex",
           justifyContent: "center",
           flexWrap: "wrap",
@@ -127,7 +131,7 @@ const Home = () => {
         }}
       >
         {content}
-      </Container>
+      </div>
     </React.Fragment>
   );
 };
