@@ -128,6 +128,7 @@ const Home = () => {
           justifyContent: "center",
           flexWrap: "wrap",
           gap: "20px",
+          marginBottom: "20px",
         }}
       >
         {content}
