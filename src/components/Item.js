@@ -3,8 +3,8 @@ import Card from "@material-ui/core/Card";
 import Button from "@material-ui/core/Button";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
-import CartContext from "../store/cart-context";
 import Rating from "@material-ui/lab/Rating";
+import CartContext from "../store/cart-context";
 
 import classes from "./Item.module.css";
 
