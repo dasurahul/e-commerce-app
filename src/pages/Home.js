@@ -117,12 +117,13 @@ const Home = () => {
       </h1>
       <Container
         style={{
-          width: "100%",
+          // width: "100%",
           margin: "0 auto",
-          display: "flex",
           padding: "20px",
-          gap: "20px",
+          display: "flex",
+          justifyContent: "center",
           flexWrap: "wrap",
+          gap: "20px",
         }}
       >
         {content}
