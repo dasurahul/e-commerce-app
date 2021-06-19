@@ -105,7 +105,7 @@ const Home = () => {
       </div>
       <Carousel
         animation="slide"
-        interval="2000"
+        interval="3000"
         navButtonsAlwaysInvisible={true}
       >
         {carouselData.map((item, i) => (
@@ -117,7 +117,7 @@ const Home = () => {
       </h1>
       <Container
         style={{
-          // width: "100%",
+          width: "100%",
           margin: "0 auto",
           padding: "20px",
           display: "flex",

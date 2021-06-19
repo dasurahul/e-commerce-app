@@ -1,6 +1,6 @@
 .item-container {
   width: 90%;
-  max-width: 340px;
+  max-width: 350px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -15,8 +15,6 @@
 
 .details-container {
   margin-top: 15px;
-  display: flex;
-  flex-direction: column;
 }
 
 .details {
@@ -27,10 +25,6 @@
 
 .name {
   font-weight: 500;
-}
-
-.rating {
-  margin: 4px 0;
 }
 
 .actions {

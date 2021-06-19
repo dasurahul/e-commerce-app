@@ -29,7 +29,6 @@ const Item = ({ item }) => {
           <div className={classes.name}>{item.name}</div>
           <div>&#8377;{item.price}</div>
           <Rating
-            className={classes.rating}
             name="half-rating-read"
             precision={0.5}
             value={item.rating}
