@@ -68,7 +68,7 @@ const Cart = () => {
         <DialogTitle>Thank You</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Thank You for shopping with us. Have a good day.
+            Thank You for shopping with us. You will get your order soon.
           </DialogContentText>
         </DialogContent>
         <DialogActions>

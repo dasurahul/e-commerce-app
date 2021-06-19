@@ -1,9 +1,10 @@
 import React, { useState, useContext } from "react";
-import StarRateIcon from "@material-ui/icons/StarRate";
 import Button from "@material-ui/core/Button";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
 import CartContext from "../store/cart-context";
+import Card from "@material-ui/core/Card";
+import Rating from "@material-ui/lab/Rating";
 
 import classes from "./Item.module.css";
 
@@ -14,7 +15,7 @@ const Item = ({ item }) => {
   };
   const cartContext = useContext(CartContext);
   return (
-    <div className={classes["item-container"]}>
+    <Card className={classes["item-container"]}>
       <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">
           Item added to cart
@@ -27,12 +28,19 @@ const Item = ({ item }) => {
         <div className={classes.details}>
           <div className={classes.name}>{item.name}</div>
           <div>&#8377;{item.price}</div>
-          <div className={classes.stars}>
-            {item.rating} <StarRateIcon />
-          </div>
+          <Rating
+            className={classes.rating}
+            name="half-rating-read"
+            precision={0.5}
+            value={item.rating}
+            size="small"
+            readOnly
+          />
         </div>
         <div className={classes.actions}>
           <Button
+            size="small"
+            className={classes.button}
             onClick={() => {
               cartContext.setCartItems((items) => {
                 return [...items, item];
@@ -42,10 +50,12 @@ const Item = ({ item }) => {
           >
             Add To Cart
           </Button>
-          <Button>View Item</Button>
+          <Button size="small" className={classes.button}>
+            View Item
+          </Button>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

@@ -7,10 +7,12 @@ import Button from "@material-ui/core/Button";
 import Item from "../components/Item";
 import Carousel from "react-material-ui-carousel";
 import Image from "../components/Image";
+import Container from "@material-ui/core/Container";
+
 import Fade from "@material-ui/core/Fade";
 
 const Home = () => {
-  var data = [
+  var carouselData = [
     {
       img: "https://i02.appmifile.com/67_operator_in/17/06/2021/29849cce49889519ab8fadade49c022b.jpg",
     },
@@ -101,33 +103,30 @@ const Home = () => {
           <MenuItem>Popular</MenuItem>
         </Menu>
       </div>
-      <Carousel animation="slide">
-        {data.map((item, i) => (
+      <Carousel
+        animation="slide"
+        interval="2000"
+        navButtonsAlwaysInvisible={true}
+      >
+        {carouselData.map((item, i) => (
           <Image key={i} data={item} />
         ))}
       </Carousel>
       <h1 style={{ textAlign: "center", margin: "40px 0", fontWeight: "500" }}>
         Latest Mobile Phones
       </h1>
-      <div
+      <Container
         style={{
           width: "90%",
-          maxWidth: "800px",
           margin: "0 auto",
-          marginTop: "40px",
-          marginBottom: "40px",
           display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexWrap: "wrap",
           padding: "20px",
-          gap: "40px",
-          backgroundColor: "#fff",
-          borderRadius: "4px",
+          gap: "20px",
+          flexWrap: "wrap",
         }}
       >
         {content}
-      </div>
+      </Container>
     </React.Fragment>
   );
 };
