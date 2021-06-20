@@ -127,7 +127,7 @@ const Home = () => {
           display: "flex",
           justifyContent: "center",
           flexWrap: "wrap",
-          gap: "20px",
+          gap: "8px",
           marginBottom: "20px",
         }}
       >

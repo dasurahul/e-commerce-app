@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
 import Rating from "@material-ui/lab/Rating";
+import StarBorderIcon from "@material-ui/icons/StarBorder";
 import CartContext from "../store/cart-context";
 
 import classes from "./Item.module.css";
@@ -33,6 +34,7 @@ const Item = ({ item }) => {
             precision={0.5}
             value={item.rating}
             size="small"
+            emptyIcon={<StarBorderIcon fontSize="inherit" />}
             readOnly
           />
         </div>
