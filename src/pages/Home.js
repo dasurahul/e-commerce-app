@@ -68,7 +68,7 @@ const Home = () => {
   }
   return (
     <React.Fragment>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", marginTop: "76px" }}>
         <Button
           aria-controls="fade-menu"
           aria-haspopup="true"

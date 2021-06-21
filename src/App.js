@@ -7,7 +7,7 @@ import Cart from "./pages/Cart";
 import Signup from "./pages/Signup";
 import Signin from "./pages/Signin";
 
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -28,7 +28,7 @@ const App = () => {
       <Route path="*">
         <Redirect to="/" />
       </Route>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

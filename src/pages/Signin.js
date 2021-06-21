@@ -8,6 +8,9 @@ import Collapse from "@material-ui/core/Collapse";
 import axios from "axios";
 import AuthContext from "../store/auth-context";
 import { Link, useHistory } from "react-router-dom";
+import firebase from "../firebase";
+import { auth } from "../firebase";
+import { signInWithGoogle } from "../firebase";
 
 const Signin = () => {
   const authContext = useContext(AuthContext);
@@ -45,6 +48,17 @@ const Signin = () => {
           setError(error.response.data.error.message);
         });
     }
+  };
+
+  const googleSignin = () => {
+    // auth.signInWithGoogle().then((response) => console.log(response));
+    // console.log(firebase);
+    // const provider = new firebase.auth.GoogleAuthProvider();
+    // provider.setCustomParameters({ prompt: "select_account" });
+    // const signInWithGoogle = () => auth.signInWithPopup(provider);
+    // console.log(provider);
+    // console.log(signInWithGoogle);
+    console.log(auth);
   };
   return (
     <Container style={{ margin: "80px auto" }}>
@@ -107,6 +121,14 @@ const Signin = () => {
               style={{ margin: "10px 0" }}
             >
               Sign In
+            </Button>
+            <br />
+            <Button onClick={signInWithGoogle}>
+              <img
+                style={{ height: "40px" }}
+                src="https://img.icons8.com/plasticine/100/000000/google-logo.png"
+              />
+              Signin Google
             </Button>
           </div>
           <p style={{ textAlign: "center", margin: "10px 0" }}>
