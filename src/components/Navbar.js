@@ -79,6 +79,7 @@ const Navbar = () => {
           >
             <ShoppingCartIcon />
           </Badge>
+          Cart
         </Link>
       </div>
     </div>

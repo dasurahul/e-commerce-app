@@ -62,7 +62,7 @@ const Home = () => {
   if (loading) {
     return (
       <section style={{ textAlign: "center", margin: "100px 0" }}>
-        <CircularProgress />
+        <CircularProgress style={{ color: "#2874F0" }} />
       </section>
     );
   }
