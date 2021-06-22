@@ -11,7 +11,10 @@ const Footer = () => {
         {({ scroll }) => (
           <a onClick={() => scroll({ x: 0, y: 0, smooth: true })}>
             <Icon>
-              <Fab color="primary" aria-label="add">
+              <Fab
+                style={{ backgroundColor: "#2874F0", color: "#fff" }}
+                aria-label="add"
+              >
                 <ArrowUpwardIcon />
               </Fab>
             </Icon>

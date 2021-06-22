@@ -4,14 +4,6 @@
   align-items: center;
   padding: 20px;
   background-color: #2874f0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 1;
-  margin: auto;
-  opacity: 1;
 }
 
 .logo a h1 {
