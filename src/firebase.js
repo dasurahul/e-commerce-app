@@ -15,28 +15,9 @@ const config = {
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
-firebase
-  .auth()
-  .getRedirectResult()
-  .then(function (result) {
-    if (result.credential) {
-      // This gives you a Google Access Token.
-      var token = result.credential.accessToken;
-    }
-    var user = result.user;
-  });
 
 const provider = new firebase.auth.GoogleAuthProvider();
-firebase
-  .auth()
-  .getRedirectResult()
-  .then(function (result) {
-    if (result.credential) {
-      // This gives you a Google Access Token.
-      var token = result.credential.accessToken;
-    }
-    var user = result.user;
-  });
+
 provider.addScope("profile");
 provider.addScope("email");
 provider.setCustomParameters({ prompt: "select_account" });

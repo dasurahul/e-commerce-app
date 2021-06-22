@@ -9,7 +9,7 @@ const Footer = () => {
     <Container>
       <ScrollTo>
         {({ scroll }) => (
-          <a onClick={() => scroll({ x: 0, y: 0, smooth: true })}>
+          <button onClick={() => scroll({ x: 0, y: 0, smooth: true })}>
             <Icon>
               <Fab
                 style={{ backgroundColor: "#2874F0", color: "#fff" }}
@@ -18,7 +18,7 @@ const Footer = () => {
                 <ArrowUpwardIcon />
               </Fab>
             </Icon>
-          </a>
+          </button>
         )}
       </ScrollTo>
     </Container>
